@@ -17,8 +17,8 @@ Use the command "pip3 libraryname --install" to install all missing libraries
 ## Usage
 
 1. Open app.py
-2. Change the name of the Subreddit on the 29th line of code.
-3. On the 35th line of code change the Limit. Limit decides how many images you do want to download from a given subreddit.
+2. Change the name of the Subreddit(sub) on the 2nd line of code.
+3. On the 3rd line of code change the Quantity. Quantity decides how many images you do want to download from a given subreddit.
 4. Open command line on your computer.
 5. Make sure you have python 3 installed.
 6. Write the command - python3 app.py

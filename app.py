@@ -1,4 +1,6 @@
 #! usr/bin/env python3
+sub = "earthporn"
+quantity = 10
 import praw
 import peekaaa as pk
 import pandas as pd
@@ -7,7 +9,6 @@ import os
 from urllib.error import URLError, HTTPError
 import urllib.request as web
 import shutil
-
 import colorama
 from colorama import Fore, Style
 
@@ -21,18 +22,18 @@ reddit = praw.Reddit(client_id='4_449rzO0nHMYg', \
 
 
 current_dir = os.getcwd()
-dir_path = os.path.join(current_dir, "earthporn")
+dir_path = os.path.join(current_dir, sub)
 if not os.path.exists(dir_path):
     os.mkdir(dir_path)
 
 
 colorama.init(autoreset= True)
-subreddit = reddit.subreddit("earthporn")
+subreddit = reddit.subreddit(sub)
 
 print("Downloading Files...")
 
 
-top_sub = subreddit.top(limit = 10)
+top_sub = subreddit.top(limit = quantity)
 
 for submission in top_sub:
     fullfilename = os.path.join(dir_path, "{}.jpg".format(submission))
