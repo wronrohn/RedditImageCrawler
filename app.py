@@ -1,5 +1,6 @@
 #! usr/bin/env python3
 import praw
+import peekaaa as pk
 import pandas as pd
 import datetime as dt
 import os
@@ -13,8 +14,8 @@ from colorama import Fore, Style
 reddit = praw.Reddit(client_id='4_449rzO0nHMYg', \
                      client_secret='3W-qwMbWzkIecvoOU9yIuGGRJ-0', \
                      user_agent='wallpaperScraper', \
-                     username='rohnit15', \
-                     password='rohnit15')
+                     username= pk.username, \
+                     password=pk.password)
 
 
 
@@ -31,7 +32,7 @@ subreddit = reddit.subreddit("earthporn")
 print("Downloading Files...")
 
 
-top_sub = subreddit.top(limit=10)
+top_sub = subreddit.top(limit = 10)
 
 for submission in top_sub:
     fullfilename = os.path.join(dir_path, "{}.jpg".format(submission))
